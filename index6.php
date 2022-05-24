@@ -47,15 +47,15 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .pm, .teachers {
+        .grey, .green {
             padding: 40px;
             float: left;
             width: 50%;
         }
-        .pm {
+        .grey {
             background: grey;
         }
-        .teachers {
+        .green {
             background: green;
         }
 
@@ -71,6 +71,11 @@
 <?php 
         foreach ($db as $key => $value){
             //var_dump($key);
+            if($key == 'teachers'){
+                $key = 'green';
+            }else{
+                $key = 'grey';
+            }
             ?> <div class="<?php echo $key ?>">
             <?php foreach ($value as $value){
                 echo "<p>$value[name] $value[lastname]";
